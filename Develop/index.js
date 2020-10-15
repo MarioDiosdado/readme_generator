@@ -1,10 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 
-// array of questions for user
-// const questions = [
-
-// ];
 inquirer
     .prompt([
         {
@@ -16,6 +12,11 @@ inquirer
             type: "input",
             message: "What's the description?",
             name: "description"
+        },
+        {
+            type: "input",
+            message: "Link to this project?",
+            name: "link"
         },
         {
             type: "input",
@@ -34,8 +35,13 @@ inquirer
         },
         {
             type: "input",
-            message: "Add test instructions here",
+            message: "Add test description here",
             name: "test"
+        },
+        {
+            type: "input",
+            message: "Add test image URL here",
+            name: "testURL"
         },
         {
             type: "input",
@@ -81,6 +87,8 @@ inquirer
         const license = data.license;
         const githubURL = data.githubURL;
         const test = data.test;
+        const testURL = data.testURL;
+        const link = data.link;
         
         fs.writeFile("README.md",
             `# ${titles} 
@@ -89,13 +97,16 @@ inquirer
 
 ${descr}
 
+You can find this project here: ${link}
+
 ## Table of contents
 
 * [Installation](#installation-instructions)
 * [Usage](#usage)
 * [Contribution Guidelines](#contribution-guidelines)
-* [Questions](#questions)
 * [License](#license)
+* [Test](#test)
+* [Questions](#questions)
             
             
 ## Installation instructions
@@ -113,6 +124,8 @@ This readme file is under the ${license} license.
 
 ## Test
 ${test}
+
+![Image of test](${testURL})
 
 ## Questions
 
