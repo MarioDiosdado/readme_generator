@@ -7,9 +7,6 @@ You can find this project here: https://github.com/MarioDiosdado/readme_generato
 ## Table of contents
 
 * [Installation](#installation-instructions)
-* [Usage](#usage)
-* [Contribution Guidelines](#contribution-guidelines)
-* [License](#license)
 * [Test](#test)
 * [Questions](#questions)
             
@@ -19,7 +16,7 @@ You can find this project here: https://github.com/MarioDiosdado/readme_generato
 
 
 ## Test
-This readme on this image was generated using the application
+The readme on this image was generated using the application
 
 ![Image of test](Develop/test.jpg)
 
