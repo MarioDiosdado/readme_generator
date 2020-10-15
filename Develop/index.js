@@ -29,8 +29,13 @@ inquirer
         },
         {
             type: "input",
-            message: "Who contributed?",
+            message: "Contribution Guidelines",
             name: "contributions"
+        },
+        {
+            type: "input",
+            message: "Add test instructions here",
+            name: "test"
         },
         {
             type: "input",
@@ -75,6 +80,7 @@ inquirer
         const email = data.email;
         const license = data.license;
         const githubURL = data.githubURL;
+        const test = data.test;
         
         fs.writeFile("README.md",
             `# ${titles} 
@@ -85,27 +91,36 @@ ${descr}
 
 ## Table of contents
 
-* [Installation](#installation-instructions) \n
-* [Usage](#usage) \n
-* [Contributions](#contributions) \n
-* [Questions](#questions) \n
+* [Installation](#installation-instructions)
+* [Usage](#usage)
+* [Contribution Guidelines](#contribution-guidelines)
+* [Questions](#questions)
+* [License](#license)
             
             
 ## Installation instructions
-${insta}
+    ${insta}
 
 ## Usage
 ${usage}
 
-## Contributions
-${contri}
+## Contribution Guidelines
+    ${contri}
+
+## License
+
+This readme file is under the ${license} license.
+
+## Test
+${test}
 
 ## Questions
-Github username: ${githubName}
 
-Github profile: ${githubURL}
+If you have any questions you can contact me here:
 
-Contact me at ${email}
+* Github username: ${githubName}
+* Github profile: ${githubURL}
+* Email: ${email}
 
 
             `
